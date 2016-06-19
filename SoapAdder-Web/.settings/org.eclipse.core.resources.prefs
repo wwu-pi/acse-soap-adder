@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+encoding//src/de/wwu/pi/soap/adder/client/SoapAdderServiceBean.java=UTF-8
+encoding//src/de/wwu/pi/soap/adder/client/SoapAdderServiceBeanService.java=UTF-8
+encoding//src/de/wwu/pi/soap/adder/client/SoapAdderServiceBeanServiceLocator.java=UTF-8
+encoding//src/de/wwu/pi/soap/adder/client/SoapAdderServiceBeanServiceSoapBindingStub.java=UTF-8

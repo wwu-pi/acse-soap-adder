@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="SoapService">
+        <wb-resource deploy-path="/" source-path="/ejbModule" tag="defaultRootSource"/>
+        <property name="java-output-path" value="/SoapService/build/classes"/>
+        <property name="ClientProject" value="SoapServiceClient"/>
+        <property name="ClientJARURI" value="SoapServiceClient.jar"/>
+    </wb-module>
+</project-modules>

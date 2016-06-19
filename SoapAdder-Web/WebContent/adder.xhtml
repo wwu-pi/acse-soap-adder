@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<f:view>
+
+	<h:head>
+		<title>SOAP Adder</title>
+	</h:head>
+	<h:body>
+
+		<h1>SOAP Adder</h1>
+
+		<h:form>
+			<h:panelGrid columns="2">
+				<h:outputLabel value="x" for="x" />
+				<h:inputText id="x" value="#{adder.x}" required="true">
+				
+				</h:inputText>
+
+				<h:outputLabel value="y" for="y" />
+				<h:inputText id="y" value="#{adder.y}" required="true">
+				
+				</h:inputText>
+
+				<f:facet name="footer">
+					<h:panelGroup style="display:block; text-align:right">
+						<h:commandButton value="add"
+							action="#{adder.send}" />
+					</h:panelGroup>
+				</f:facet>
+
+			</h:panelGrid>
+		</h:form>
+
+		<h:panelGrid columns="2">
+			<h:outputLabel value="Result:" for="result" />
+			<h:outputText id="result" value="#{adder.result}">
+			</h:outputText>
+		</h:panelGrid>
+		
+		<div class="error">
+			<h:messages globalOnly="true" errorClass="err" layout="table" />
+		</div>
+	</h:body>
+</f:view>
+</html>
