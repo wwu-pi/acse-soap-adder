@@ -8,8 +8,9 @@
 package de.wwu.pi.soap.adder.client;
 
 public class SoapAdderServiceBeanServiceLocator extends org.apache.axis.client.Service implements de.wwu.pi.soap.adder.client.SoapAdderServiceBeanService {
+	private static final long serialVersionUID = 1L;
 
-    public SoapAdderServiceBeanServiceLocator() {
+	public SoapAdderServiceBeanServiceLocator() {
     }
 
 
