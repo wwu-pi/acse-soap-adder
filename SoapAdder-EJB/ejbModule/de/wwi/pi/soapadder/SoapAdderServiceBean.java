@@ -1,17 +1,17 @@
 package de.wwi.pi.soapadder;
 
-import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
+import javax.jws.soap.SOAPBinding;
 
 /**
  * Session Bean implementation class SoapAdderServiceBean
  */
 
-@WebService
 @Stateless
-@LocalBean
+@WebService(name="SoapAdderServiceBean")
+@SOAPBinding(style = SOAPBinding.Style.DOCUMENT,use=SOAPBinding.Use.LITERAL)
 public class SoapAdderServiceBean {
 
     public SoapAdderServiceBean() {
