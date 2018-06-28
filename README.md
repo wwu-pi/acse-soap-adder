@@ -13,8 +13,8 @@ To run the SOAP projects, proceed as follows.
 This procedure uses standardized JAX-WS technology (part of Java EE). It does, however, require some manual work.
 
 1. Ensure the PATH environment variable includes the "bin" folder from the JDK installation.
-1. After making changes to the Web service classes, switch into the `SoapAdder-EJB/build/classes` folder on your command line.
-1. Execute the following command to generate the WSDL file `wsgen -verbose -keep -wsdl -d ../ -cp . de.wwu.pi.soapadder.SoapAdderServiceBean`
+1. After making changes to the Web service classes, create a `res` directory in the `SoapAdder-EJB` project on your command line and nevigate into it.
+1. Execute the following command to generate the WSDL file `wsgen -verbose -wsdl -cp ../build/classes de.wwu.pi.soapadder.SoapAdderServiceBean`
 1. Run the web service application on your server.
 1. On the command line, navigate into an appropriate directory outside the server project and execute ``wsimport -keep -p <targetPackageName> <URL of WSDL>``, e.g. using `http://localhost:8080/SoapService/SoapAdderServiceBean?wsdl`. This will generate Java source and class files.
 1. Import the generated source files into your Eclipse project that should serve as client system: *File* > *Import* > *General* > *File System*
