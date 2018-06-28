@@ -9,10 +9,13 @@ To run the SOAP projects, proceed as follows.
 1. Once you published the SoapService projects onto your application server and started the server, your adder service is accessible under <a href="http://localhost:8080/SoapService/SoapAdderServiceBean">http://localhost:8080/SoapService/SoapAdderServiceBean</a> (replace `localhost` with your Docker-IP, when using Docker Toolbox). It will, however, only accept SOAP messages and has no web user interface.
 1. The SoapClient is a plain Java project that contains the generated proxy classes and a main method in class `Adder`. Run this class from Eclipse to get a result.
 
-## Creating Web services using wsimport
+## Creating Web services using wsgen and wsimport
 This procedure uses standardized JAX-WS technology (part of Java EE). It does, however, require some manual work.
 
 1. Ensure the PATH environment variable includes the "bin" folder from the JDK installation.
-1. From the command line, execute ``wsimport -keep <URL of WSDL>``. This will generate Java source and class files.
+1. After making changes to the Web service classes, switch into the `SoapAdder-EJB/build/classes` folder on your command line.
+1. Execute the following command to generate the WSDL file `wsgen -verbose -keep -wsdl -d ../ -cp . de.wwu.pi.soapadder.SoapAdderServiceBean`
+1. Run the web service application on your server.
+1. On the command line, navigate into an appropriate directory outside the server project and execute ``wsimport -keep -p <targetPackageName> <URL of WSDL>``, e.g. using `http://localhost:8080/SoapService/SoapAdderServiceBean?wsdl`. This will generate Java source and class files.
 1. Import the generated source files into your Eclipse project that should serve as client system: *File* > *Import* > *General* > *File System*
-1. Depending on the Web service, several message and data classes will be generated. Furthermore, there will be a service class which inherits from *javax.xml.ws.Service*. Instantiate this class or, in a managed environment, use dependency injection with the annotation ``@WebServiceRef`` (see lecture). The service instance will offer a method that returns a proxy providing the Web service operation(s).
+1. Depending on the Web service, several message and data classes will be generated. Furthermore, there will be a service class which inherits from *javax.xml.ws.Service*. Instantiate this class or, in a managed environment, use dependency injection with the annotation ``@WebServiceRef`` (see lecture). The service instance will offer a method that returns a port providing the Web service operation(s).
